@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  12 MAY 2026 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.30)  12 MAY 2026 17:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/zajac/Desktop/aplikacje mobilne projekt/main.tex"
-(c:/Users/zajac/Desktop/aplikacje mobilne projekt/main.tex
+**"c:/Users/zajac/Desktop/aplikacje mobilne projekt 2 - szablon dokumentacji/main.tex"
+(c:/Users/zajac/Desktop/aplikacje mobilne projekt 2 - szablon dokumentacji/main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (C:\Users\zajac\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1031,22 +1031,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  []
 
 
-Underfull \hbox (badness 2293) in paragraph at lines 23--23
-[]\T1/ptm/b/n/10 Liczba wy-ko-rzy-sta-nych po-zy-cji
- []
-
-
-Overfull \hbox (9.7736pt too wide) in paragraph at lines 10--26
+Overfull \hbox (9.7736pt too wide) in paragraph at lines 10--28
 [] 
  []
 
 
-Underfull \hbox (badness 5050) in paragraph at lines 36--36
-[]\T1/ptm/b/n/10 Streszczenie pracy (max 1400
- []
-
-
-Overfull \hbox (9.7736pt too wide) in paragraph at lines 29--39
+Overfull \hbox (9.7736pt too wide) in paragraph at lines 31--41
 [] 
  []
 
@@ -1151,14 +1141,14 @@ Package logreq Info: Writing requests to 'main.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  34976 strings out of 467866
- 683803 string characters out of 5418313
+ 684403 string characters out of 5418313
  1534131 words of memory out of 5000000
  63242 multiletter control sequences out of 15000+600000
  675257 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,117p,744b,1852s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,117p,769b,1852s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/zajac/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/zajac/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/zajac/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (16 pages, 107101 bytes).
+Output written on main.pdf (16 pages, 107165 bytes).
 PDF statistics:
  278 PDF objects out of 1000 (max. 8388607)
  55 named destinations out of 1000 (max. 500000)
