@@ -1,0 +1,77 @@
+\chapter{Analiza wymagań i projekt rozwiązania}
+Rozdział przedstawia wymagania oraz projekt rozwiązania. Opis obejmuje zarówno aspekty funkcjonalne,
+jak i niefunkcjonalne, a~także strukturę systemu i proces kompilacji dokumentów.
+
+\section{Wymagania funkcjonalne}
+Do kluczowych wymagań funkcjonalnych należą:
+\begin{itemize}
+    \item splikacja musi łączyć się z serwerem opartym o SpingBoot
+    \item zapis danych do lokalnej relacyjnej bazy SQL lub nierelacyjnej na serwerze
+    \item aplikacja musi pobierać aktualny pomiar temperatury,
+    \item aplikacja musi wyświetlać dziennik zapisów,
+    \item dane muszą być prezentowane w sposób czytelny,
+    \item integracja z urządzeniami RestAPI,
+    \item przygotowanie dokumentacji zgodnej z wymaganiami edytorskimi.
+\end{itemize}
+
+\section{Wymagania niefunkcjonalne}
+Rozwiązanie powinno spełniać następujące wymagania jakościowe:
+\begin{itemize}
+    \item kompatybilność z systemami Android 8.0+,
+    \item czas odpowiedzi API mniejszy niż 300ms,
+    \item dostępność systemu większa niż 99%,
+    \item szyfrowanie SSL/TLS dla transmisji danych,
+    \item dostępność zgodna z WCAG 2.1 na poziomie AA.
+\end{itemize}
+
+\section{Architektura rozwiązania}
+Architektura systemu została zaprojektowana w modelu warstwowym (wielowarstwowym), w którym poszczególne komponenty odpowiadają za ściśle określone zadania. Rozdzielenie funkcjonalności na warstwy zwiększa czytelność projektu, ułatwia jego rozwój oraz umożliwia niezależne modyfikowanie poszczególnych elementów systemu. Całość rozwiązania opiera się na komunikacji sieciowej w modelu klient–serwer.
+
+System składa się z czterech głównych warstw: warstwy pomiarowej (sprzętowej), warstwy komunikacyjnej i serwerowej (API), warstwy bazy danych oraz warstwy aplikacji mobilnej.
+
+\section{Warstwa sprzętowa}
+\begin{itemize}
+    \item Moduł ESP32 WROOM,
+    \item Czujnik DHT11,
+\end{itemize}
+
+ESP32 odczytuje temperaturę i wysyła dane metodą HTTP POST do serwera.
+
+\section{Warstwa serwera}
+\begin{itemize}
+    \item XAMPP (Apache + MySQL),
+    \item SpringBoot + RestAPI,
+\end{itemize}
+
+API odpowiada za:
+\begin{itemize}
+    \item otrzymywanie danych z ESP32,
+    \item zapisywanie do MySQL,
+    \item udostępnianie danych aplikacji mobilnej w formacie JSON.
+\end{itemize}
+
+\section{Warstwa bazy danych}
+\begin{table}[ht!]
+\centering
+\caption{Struktura tabeli temperatura}
+\label{tab:przyklad}
+\begin{tabular}{lll}
+\toprule
+Pole        & Typ danych \\  
+\midrule
+id          & int \\
+data        & date \\ 
+godzina     & int \\
+temperatura & int \\
+\bottomrule 
+\end{tabular}
+\sourcetab{opracowanie własne}
+\end{table}
+
+\section{Warstwa aplikacji mobilnej}
+Aplikacja Android:
+\begin{itemize}
+    \item komunikacja z API,
+    \item przetwarzanie JSON,
+    \item wyświetlanie danych w UI.
+\end{itemize}
