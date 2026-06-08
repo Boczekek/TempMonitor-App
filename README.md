@@ -85,10 +85,6 @@ System został zaprojektowany zgodnie z podejściem mikroserwisowym.
 
 ---
 
-# Struktura projektu
-
----
-
 # Instalacja i uruchomienie
 
 ## 1. Wymagania
