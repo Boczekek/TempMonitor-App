@@ -4,8 +4,8 @@
 #define DHTpin 15
 DHTesp dht;
 
-#define WIFI_NETWORK "WadowiceNet_i56p_5G"
-#define WIFI_PASSWORD "s8ym4jce"
+#define WIFI_NETWORK ""
+#define WIFI_PASSWORD ""
 #define WIFI_TIMEOUT_MS 20000
 
 // Definicja strefy czasowej dla Polski (obsługuje czas letni i zimowy)
