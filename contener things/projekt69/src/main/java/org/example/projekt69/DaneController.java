@@ -2,6 +2,8 @@ package org.example.projekt69;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.ZoneId;
 import java.util.List;
 
 @RestController
@@ -31,8 +33,8 @@ public class DaneController {
     public ResponseEntity<String> receiveFromArduino(@RequestBody Dane data) {
         // Arduino wysyła np. tylko {"temperatura": 22.5}
         // Serwer sam ustawia aktualny czas i datę:
-        data.setData(java.time.LocalDate.now());
-        data.setGodzina(java.time.LocalTime.now());
+        data.setData(java.time.LocalDate.now(ZoneId.of("Europe/Warsaw")));
+        data.setGodzina(java.time.LocalTime.now(ZoneId.of("Europe/Warsaw")));
 
         // Zapis do bazy SQL
         repository.save(data);

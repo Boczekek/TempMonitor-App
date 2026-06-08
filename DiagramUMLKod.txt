@@ -1,0 +1,35 @@
+@startuml
+skinparam componentStyle uml2
+
+package "Warstwa IoT" {
+    [ESP32 + Czujnik] as esp32
+}
+
+package "Brama Sieciowa" {
+    [API Gateway / Message Broker] as gateway
+}
+
+package "Mikroserwisy (Backend)" {
+    component "Auth & User Service" as authService
+    component "Telemetry & IoT Service" as telemetryService
+    
+    database "Relational DB (PostgreSQL)" as userDB
+    database "Time-Series DB (InfluxDB)" as iotDB
+    
+    authService --> userDB : Zapis/Odczyt
+    telemetryService --> iotDB : Zapis/Odczyt
+}
+
+package "Warstwa Klienta" {
+    [Aplikacja Webowa (React/Vue)] as webApp
+    [Aplikacja Mobilna] as mobileApp
+}
+
+' Relacje i komunikacja
+esp32 --> gateway : HTTP POST / MQTT (Dane z czujnika)
+gateway --> telemetryService : Przekierowanie ruchu
+webApp --> gateway : REST API / WebSockets
+mobileApp --> gateway : REST API / WebSockets
+gateway --> authService : Autoryzacja i użytkownicy
+
+@enduml

@@ -1,0 +1,45 @@
+\chapter{Cel i zakres pracy}
+Jasne wyznaczenie kierunków działania pozwala na precyzyjne zaplanowanie etapów pracy i uniknięcie zbędnych funkcjonalności. Dokumentacja ta definiuje granice projektu oraz to, co dokładnie zostanie dostarczone po jego zakończeniu.
+\section{Cel projektu}
+Głównym celem projektu było opracowanie i wdrożenie kompletnego, rozproszonego systemu pozwalającego na zdalny odczyt, archiwizację i wizualizację danych pomiarowych z fizycznego czujnika temperatury. System miał łączyć w sobie elementy sprzętowe, serwerowe oraz klienckie, tworząc spójną całość gotową do działania w warunkach lokalnych.
+
+\section{Cele szczegółowe}
+W~ramach realizacji projektu wyznaczono następujące cele szczegółowe:
+\begin{itemize}
+    \item zaprogramowanie mikrokontrolera ESP32 do obsługi czujnika pomiarowego oraz bezprzewodowego przesyłania danych przez Wi-Fi,
+    \item zaimplementowanie serwera backendowego w technologii Spring Boot, pełniącego rolę centralnego węzła komunikacyjnego,
+    \item konfiguracja i konteneryzacja relacyjnej bazy danych MySQL do trwałego przechowywania historii pomiarów,
+    \item stworzenie natywnej aplikacji mobilnej na system Android, umożliwiającej bieżący podgląd danych,
+    \item budowa responsywnego interfejsu webowego w formie strony internetowej do przeglądania dziennika zapisów,
+    \item integracja wszystkich modułów za pomocą protokołu HTTP i formatu danych JSON.
+\end{itemize}
+
+\section{Zakres pracy}
+Zakres pracy obejmuje następujące kroki:
+\begin{itemize}
+    \item konfiguracja warstwy sprzętowej obejmującej mikrokontroler ESP32 oraz czujnik temperatury,
+    \item implementacja logiki serwerowej wraz z obsługą endpointów REST API,
+    \item przygotowanie schematu bazy danych oraz skryptów łączących serwer z bazą MySQL,
+    \item opracowanie interfejsu graficznego i logiki komunikacyjnej dla aplikacji mobilnej Android,
+    \item przygotowanie frontendu webowego (HTML/CSS/JS) współpracującego z API serwera,
+    \item przeprowadzenie testów funkcjonalnych i weryfikacja poprawności przepływu danych w sieci lokalnej.
+\end{itemize}
+
+\section{Podział zadań i harmonogram}
+Prace nad systemem zostały podzielone między trzech członków zespołu w taki sposób, aby każdy odpowiadał za kluczową warstwę architektury mikroserwisowej: sprzętową, serwerową lub kliencką.
+
+\begin{itemize}
+    \item Franciszek Dębski (Programista IoT i projektant PCB): Odpowiadał za warstwę sprzętową, w tym zaprogramowanie mikrokontrolera ESP32 w języku C++ oraz zaprojektowanie modelu płytki w EasyEDA (rysunek \ref{fig:pcb} i \ref{fig:pcb3d}). Przygotował również diagram UML (rysunek \ref{fig:uml}).
+    \item Patryk Wilk (Główny programista): Zrealizował warstwę serwerową w Spring Boot, skonfigurował bazę danych MySQL w Dockerze oraz stworzył stronę internetową. Zarządzał harmonogramem w programie GanttProject (rysunek \ref{fig:gantt}).
+    \item Krystian Zając (Programista mobilny i Menadżer): Opracował natywną aplikację na system Android oraz przygotował pełną dokumentację techniczną w systemie LaTeX. Odpowiadał za plik README oraz prezentację końcową projektu.\\
+\end{itemize}
+
+Realizacja projektu została rozłożona w czasie zgodnie z ustalonym planem prac, co pozwoliło na zachowanie płynności i terminową integrację wszystkich modułów systemu. Wykres Gantta przedstawiony ponieżej na rysunku \ref{fig:gantt}, pokazuje szczegółowy podział na etapy, ramy czasowe poszczególnych zadań oraz kluczowe kamienie milowe projektu.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{rysunki/gantt.png} 
+    \caption{Wykres Gantta}
+    \label{fig:gantt} % Klucz dla grafiki PNG
+    \sourcefig{opracowanie własne (GanttProject)}
+\end{figure}

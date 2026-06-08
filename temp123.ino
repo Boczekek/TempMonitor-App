@@ -1,48 +1,89 @@
-/* 
- * ESP32 NodeMCU DHT11 - Humidity Temperature Sensor Example
- * https://circuits4you.com
- * 
- * References
- * https://circuits4you.com/2017/12/31/nodemcu-pinout/
- * 
- */
- 
+#include <HTTPClient.h>
+#include <WiFi.h>
 #include "DHTesp.h"
-
-#define DHTpin 15    //D15 of ESP32 DevKit
-
+#define DHTpin 15
 DHTesp dht;
 
-void setup()
-{
-  Serial.begin(115200);
-  Serial.println();
-  Serial.println("Status\tHumidity (%)\tTemperature (C)\t(F)\tHeatIndex (C)\t(F)");
-  
-  // Autodetect is not working reliable, don't use the following line
-  // dht.setup(17);
+#define WIFI_NETWORK "WadowiceNet_i56p_5G"
+#define WIFI_PASSWORD "s8ym4jce"
+#define WIFI_TIMEOUT_MS 20000
 
-  // use this instead: 
-  dht.setup(DHTpin, DHTesp::DHT11); //for DHT11 Connect DHT sensor to GPIO 17
-  //dht.setup(DHTpin, DHTesp::DHT22); //for DHT22 Connect DHT sensor to GPIO 17
+// Definicja strefy czasowej dla Polski (obsługuje czas letni i zimowy)
+//const char* TZ_INFO = "CET-1CEST,M3.5.0,M10.5.0/3";
+
+void connectToWiFi(){
+  Serial.print("Connecting to WiFi");
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(WIFI_NETWORK, WIFI_PASSWORD);
+
+  unsigned long startAttemptTime = millis();
+
+  while(WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < WIFI_TIMEOUT_MS){
+    Serial.print(".");
+    delay(100);
+  }
+
+  if(WiFi.status() != WL_CONNECTED){
+    Serial.println(" Failed!");
+    // take action
+  }else{
+    Serial.print("Connected!");
+    Serial.println(WiFi.localIP());
+  }
+
+  // Konfiguracja czasu z uwzględnieniem strefy dla Polski
+  //configTzTime(TZ_INFO, "pool.ntp.org", "time.nist.gov");
 }
 
-void loop()
-{
-  delay(dht.getMinimumSamplingPeriod());
+void setup() {
+dht.setup(DHTpin, DHTesp::DHT11);
+Serial.begin(9600);
+  connectToWiFi();
+}
 
-  float humidity = dht.getHumidity();
-  float temperature = dht.getTemperature();
+void wyslijDane(float temp) {
+    HTTPClient http;
+    // Zmień IP na IP swojego serwera (komputera w tej samej sieci)
+    http.begin("http://192.168.100.16:8080/api/pomiary/arduino");
+    http.addHeader("Content-Type", "application/json");
 
-  Serial.print(dht.getStatusString());
-  Serial.print("\t");
-  Serial.print(humidity, 1);
-  Serial.print("\t\t");
-  Serial.print(temperature, 1);
-  Serial.print("\t\t");
-  Serial.print(dht.toFahrenheit(temperature), 1);
-  Serial.print("\t\t");
-  Serial.print(dht.computeHeatIndex(temperature, humidity, false), 1);
-  Serial.print("\t\t");
-  Serial.println(dht.computeHeatIndex(dht.toFahrenheit(temperature), humidity, true), 1);
+    // Tworzenie JSONa
+    String httpRequestData = "{\"temperatura\":" + String(temp) + "}";
+
+    // Wysłanie żądania POST
+    int httpResponseCode = http.POST(httpRequestData);
+
+    if (httpResponseCode > 0) {
+        Serial.print("Sukces, kod: ");
+        Serial.println(httpResponseCode);
+    } else {
+        Serial.print("Błąd wysyłania: ");
+        Serial.println(httpResponseCode);
+    }
+    http.end();
+}
+unsigned long poprzedniCzas = 0;
+const long interwal = 60000; // 60 000 ms = 1 minuta
+
+void loop() {
+  unsigned long obecnyCzas = millis();
+  if (obecnyCzas - poprzedniCzas >= interwal) {
+    poprzedniCzas = obecnyCzas;
+
+    float temperature = dht.getTemperature();
+
+    // Sprawdź czy odczyt jest poprawny (nie jest NaN)
+    if (isnan(temperature)) {
+      Serial.println("Błąd odczytu z czujnika DHT!");
+      return;
+    }
+
+    // Wyślij dane tylko jeśli WiFi jest połączone
+    if (WiFi.status() == WL_CONNECTED) {
+      wyslijDane(temperature);
+    } else {
+      Serial.println("Błąd: Brak połączenia z WiFi!");
+      // Opcjonalnie spróbuj połączyć się ponownie
+    }
+  }
 }

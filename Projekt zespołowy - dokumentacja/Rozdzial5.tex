@@ -1,0 +1,11 @@
+\chapter{Testy i weryfikacja}
+Przeprowadzenie weryfikacji potwierdza, że system został wykonany zgodnie z planem i spełnia wszystkie założone wymagania techniczne. Dokumentacja ta stanowi dowód na poprawność działania i niezawodność całej stworzonej architektury.
+
+\section{Testy funkcjonalne}
+Testy wykazały, że komunikacja między mikrokontrolerem a serwerem przebiega bez zakłóceń, a dane są poprawnie zapisywane w bazie MySQL. Sprawdzono również aplikacje klienckie, potwierdzając, że zarówno strona internetowa, jak i aplikacja mobilna wyświetlają aktualne dane oraz pełną historię pomiarów w odpowiedniej kolejności chronologicznej.
+
+\section{Testy niefunkcjonalne}
+Weryfikacja wydajności potwierdziła, że średni czas odpowiedzi API wynosi około 50 ms, co znacznie przewyższa założony limit 300 ms. Przetestowano także stabilność automatycznego odświeżania danych co 10 sekund oraz responsywność interfejsu webowego, który poprawnie dopasowuje się do różnych rozdzielczości ekranu.
+
+\section{Wyniki testów}
+System pomyślnie przeszedł wszystkie scenariusze testowe i nie wykazuje błędów\\ w przepływie informacji. Aplikacje poprawnie reagują na brak połączenia z serwerem, wyświetlając stosowne komunikaty, co potwierdza, że stworzona architektura jest stabilna\\ i gotowa do pracy w środowisku lokalnym.

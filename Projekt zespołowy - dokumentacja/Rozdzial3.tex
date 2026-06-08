@@ -1,0 +1,89 @@
+\chapter{Opis działania systemu}
+
+Szczegółowe przedstawienie mechanizmów działania systemu tłumaczy sposób, w jaki dane przemieszczają się między urządzeniami. Ułatwia to zrozumienie logiki aplikacji oraz technicznych aspektów integracji poszczególnych modułów.
+
+\section{Środowisko i struktura projektu}
+Podczas prac deweloperskich wykorzystano środowiska IntelliJ IDEA oraz Android Studio. Struktura projektu jest podzielona na niezależne moduły: projekt serwerowy, projekt mobilny oraz pliki frontendu webowego. Baza danych MySQL pracuje jako osobna usługa, co symuluje rzeczywiste warunki pracy systemów sieciowych.
+
+\section{Przepływ danych oraz integracja}
+Dane przepływają w systemie w sposób liniowy. Mikrokontroler ESP32 po odczytaniu temperatury formuje paczkę JSON i wysyła ją na endpoint serwera. Serwer Spring Boot przetwarza tę paczkę, dodaje do niej datę i godzinę systemową, po czym wysyła polecenie zapisu do bazy danych. Aplikacje mobilna i webowa w stałych odstępach czasu (co 10 sekund) odpytują serwer o najnowsze dane. Jeśli w bazie pojawiły się nowe rekordy, interfejsy użytkownika są natychmiastowo aktualizowane.
+
+\section{Interfejs użytkownika}
+Interfejs webowy, przedstawiony na rysunku \ref{fig:web}, został zaprojektowany z myślą o przejrzystości i łatwości nawigacji. Głównym elementem jest tabela, która wyświetla wszystkie zarejestrowane pomiary temperatury wraz z datą i godziną. Dzięki zastosowaniu prostego układu, użytkownik może szybko znaleźć interesujące go dane oraz przeanalizować historię pomiarów.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{rysunki/web.png} 
+    \caption{Interfejs webowy}
+    \label{fig:web} % Klucz dla grafiki PNG
+    \sourcefig{opracowanie własne}
+\end{figure}
+\pagebreak
+Interfejs mobilny, przedstawiony na rysunku \ref{fig:app}, został zaprojektowany z myślą o prostocie i funkcjonalności. Głównym elementem jest karta z aktualną temperaturą, a poniżej znajduje się lista wszystkich pomiarów, która jest automatycznie odświeżana co 10 sekund, zapewniając użytkownikowi dostęp do najnowszych danych bez konieczności ręcznego odświeżania aplikacji.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{rysunki/app.png} 
+    \caption{Interfejs mobilny}
+    \label{fig:app} % Klucz dla grafiki PNG
+    \sourcefig{opracowanie własne (Android Studio)}
+\end{figure}
+
+\pagebreak
+
+\section{Fragmenty kodu źródłowego}
+Poniżej przedstawiono fragmenty kodu źródłowego wraz z opisami, które ilustrują kluczowe elementy działania systemu. Przedstawione przykłady dotyczą głównie warstwy IoT, serwerowej oraz mobilnej, co pozwala na zrozumienie mechanizmów komunikacji i przetwarzania danych w całym systemie.
+
+\subsection{Warstwa IoT (Mikrokontroler ESP32)}
+Mikrokontroler został skonfigurowany w trybie punktu dostępowego, co oznacza, że tworzy on własną sieć Wi-Fi o nazwie „Wifi XPP”. Komputer z serwerem musi być podłączony do tej sieci, aby komunikacja była możliwa. Jak zaprezentowano w listingu \ref{lst:wyslijDane}, urządzenie w pętli co 60 sekund odczytuje temperaturę z czujnika DHT11 i wysyła ją metodą POST w formacie JSON pod stały adres IP serwera.
+
+\begin{lstlisting}[language=C++, caption={Fragment kodu odpowiedzialny za wysyłanie danych}, label={lst:wyslijDane}]
+    void wyslijDane(float temp) {
+    HTTPClient http;
+    http.begin("http://192.168.4.2:8080/api/pomiary/arduino");
+    http.addHeader("Content-Type", "application/json");
+    String httpRequestData = "{\"temperatura\":" + String(temp) + "}";
+
+    int httpResponseCode = http.POST(httpRequestData);
+
+    if (httpResponseCode > 0) {
+        Serial.printf("Sukces, kod: %d\n", httpResponseCode);
+    } else {
+        Serial.printf("Błąd połączenia: %s\n", http.errorToString(httpResponseCode).c_str());
+    }
+    http.end();
+}   
+\end{lstlisting}
+
+
+\subsection{Warstwa serwerowa (Spring Boot)}
+Serwer pełni rolę pośrednika i archiwizatora. Jego zadaniem jest odebranie wartości liczbowej od ESP32 i dopisanie do niej brakujących informacji, takich jak aktualna data\\ i godzina, ponieważ mikrokontroler nie posiada własnego zegara czasu rzeczywistego.
+
+\begin{lstlisting}[language=Java, caption={Fragment kodu odpowiedzialny za odbieranie danych}, label={lst:receiveFromArduino}]
+@PostMapping("/arduino")
+public ResponseEntity<String> receiveFromArduino(@RequestBody Dane data) {
+    
+    data.setData(java.time.LocalDate.now());
+    data.setGodzina(java.time.LocalTime.now());
+
+    repository.save(data);
+
+    return ResponseEntity.ok("Dane zapisane pomyślnie");
+}
+\end{lstlisting}
+
+\subsection{Warstwa mobilna (Android)}
+Aplikacja mobilna działa w trybie odczytu. Aby zapewnić użytkownikowi świeże informacje bez konieczności ręcznego odświeżania, zastosowano mechanizm pętli czasowej, która co 10 sekund wysyła zapytanie GET do serwera.
+
+\begin{lstlisting}[language=Java, caption={Fragment kodu odpowiedzialny za odbieranie danych}, label={lst:refreshRunnable}]
+refreshRunnable = new Runnable() {
+    @Override
+    public void run() {
+        // Metoda pobierająca listę wszystkich pomiarów z serwera
+        pobierzDaneZSerwera();
+        
+        // Planowanie kolejnego wykonania kodu za 10 000 milisekund
+        handler.postDelayed(this, 10000);
+    }
+};
+\end{lstlisting}
+
+Zastosowanie obiektu Handler pozwala na cykliczne wykonywanie zadania w tle. Metoda pobierzDaneZSerwera wykorzystuje bibliotekę Retrofit do pobrania listy obiektów, która następnie jest przekazywana do adaptera i wyświetlana na ekranie telefonu w formie chronologicznego dziennika.
