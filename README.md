@@ -87,17 +87,6 @@ System został zaprojektowany zgodnie z podejściem mikroserwisowym.
 
 # Struktura projektu
 
-```bash
-project/
-│
-├── backend/              # Serwer Spring Boot
-├── mobile-app/           # Aplikacja Android
-├── web-app/              # Frontend webowy
-├── esp32/                # Kod mikrokontrolera
-├── docker/               # Konfiguracja Dockera
-└── README.md
-```
-
 ---
 
 # Instalacja i uruchomienie
