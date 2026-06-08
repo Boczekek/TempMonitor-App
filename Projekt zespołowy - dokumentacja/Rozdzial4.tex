@@ -12,10 +12,10 @@ Aby system mógł pracować wydajnie i bez opóźnień, urządzenia wykorzystywa
 \section{Instrukcja instalacji}
 Proces instalacji systemu został podzielony na etapy, które należy wykonywać w określonej kolejności. Jest to kluczowe, ponieważ aplikacje klienckie oraz mikrokontroler wymagają aktywnego i skonfigurowanego serwera do poprawnego działania.
 \begin{itemize}
-	\item Uruchomienie serwera (Docker): Należy uruchomić kontener MySQL i Spring Boot za pomocą Dockera. W tym celu uruchom program Docker Desktop, otwórz folder "container things", a następnie w terminalu i wpisz komendę "docker-compose up --build".
-	\item Programowanie mikrokontrolera: Korzystając z Arduino IDE, należy wgrać kod do układu ESP32. W kodzie źródłowym należy wcześniej wpisać nazwę i hasło lokalnej sieci Wi-Fi oraz adres IP komputera, na którym działa serwer.
-	\item Instalacja aplikacji mobilnej: Plik aplikacji należy skompilować w Android Studio\\ i zainstalować na telefonie. W ustawieniach połączenia (klasa ApiClient/MainActivity) musi znajdować się ten sam adres IP serwera, co w przypadku ESP32.
-	\item Uruchomienie interfejsu webowego: Plik index.html należy otworzyć w dowolnej nowoczesnej przeglądarce internetowej na komputerze podłączonym do tej samej sieci.
+	\item Uruchomienie serwera (Docker): Należy uruchomić kontener MySQL i Spring Boot za pomocą Dockera. W tym celu uruchom program Docker Desktop, otwórz folder "container things" w terminalu i wpisz komendę "docker-compose up --build".
+	\item Programowanie mikrokontrolera: Korzystając z Arduino IDE, należy wgrać kod do układu ESP32.
+	\item Połączenie urządzeń: Komputer z serwerem musi być podłączony do sieci Wi-Fi utworzonej przez ESP32, a telefon z aplikacją mobilną powinien być połączony z tą samą siecią.
+	\item Instalacja aplikacji mobilnej: Pobierz plik APK i zainstaluj go na swoim urządzeniu z Androidem, a następnie uruchom aplikację.
 \end{itemize}
 
 \pagebreak
@@ -27,7 +27,7 @@ Korzystanie z gotowego systemu jest intuicyjne, ponieważ większość procesów
 Po uruchomieniu aplikacji na smartfonie, główny ekran natychmiast wyświetla ostatni zarejestrowany pomiar w wyróżnionej karcie na górze. Poniżej znajduje się chronologiczna lista wszystkich zapisów. Aplikacja sama odpytuje serwer o nowe dane co 10 sekund, więc użytkownik nie musi ręcznie odświeżać widoku, aby zobaczyć najnowsze zmiany.
 
 \subsection{Obsługa interfejsu webowego}
-W celu przejrzenia danych na komputerze wystarczy otworzyć przygotowany plik strony w dowolnej przeglądarce internetowej. Wyświetli on czytelną tabelę z kompletną historią zapisów, co pozwala na wygodną analizę danych archiwalnych.
+W celu przejrzenia danych na komputerze wystarczy wejść na adres http://localhost:8080/ w dowolnej przeglądarce internetowej. Wyświetli się strona z czytelną tabelą z kompletną historią zapisów, co pozwala na wygodną analizę danych archiwalnych.
 
 \subsection{Kontrola stanu połączenia}
 System został zaprojektowany tak, aby na bieżąco informować o ewentualnych problemach technicznych. Jeśli telefon straci połączenie z serwerem lub serwer zostanie wyłączony, na ekranie aplikacji mobilnej pojawi się komunikat informujący o braku łączności, co ułatwia szybkie zdiagnozowanie problemu z siecią Wi-Fi.

@@ -2,10 +2,50 @@
 Przeprowadzenie weryfikacji potwierdza, że system został wykonany zgodnie z planem i spełnia wszystkie założone wymagania techniczne. Dokumentacja ta stanowi dowód na poprawność działania i niezawodność całej stworzonej architektury.
 
 \section{Testy funkcjonalne}
-Testy wykazały, że komunikacja między mikrokontrolerem a serwerem przebiega bez zakłóceń, a dane są poprawnie zapisywane w bazie MySQL. Sprawdzono również aplikacje klienckie, potwierdzając, że zarówno strona internetowa, jak i aplikacja mobilna wyświetlają aktualne dane oraz pełną historię pomiarów w odpowiedniej kolejności chronologicznej.
+Prawidłowość realizacji wszystkich procesów logicznych sprawdzono podczas testów funkcjonalnych opisanych w Tabeli \ref{tab:testyfunkcjonalne}, która zawiera zestawienie wymagań i wyników testów.
+
+\begin{table}[ht!]
+\centering
+\caption{Testy funkcjonalne}
+\label{tab:testyfunkcjonalne}
+\begin{tabular}{lll}
+\toprule
+ID wymogu & Opis & Status \\  
+\midrule
+FR-001      & Serwer uruchomiony i działający w oparciu o SpringBoot.    & Zaliczony \\
+FR-002      & Zapis danych do lokalnej bazy SQL na serwerze.    & Zaliczony \\ 
+FR-003      & Interfejs użytkownika dostępny przez przeglądarkę i aplikację mobilną.    & Zaliczony \\
+FR-004      & Wyświetlanie dzinnika zapisów z datą, godziną i wartościami.    & Zaliczony \\
+FR-005      & Integracja z urządzeniami IoT za pomocą RestAPI.    & Zaliczony \\
+FR-006      & Implementacja RestAPI do zarządzania danymi i interakcją.    & Zaliczony \\
+FR-007      & Przygotowanie dokumentacji w oparcu LaTeX. Wymagania edytorskie.    & Zaliczony \\
+FR-008      & Przygotowanie diagramów UML ilustrujących strukturę i zachowanie systemu.    & Zaliczony \\
+FR-009      & Dostarczenie działającej aplikacji.    & Zaliczony \\
+FR-010      & Utworzenie pliku README.md z opisem projektu i instrukcją instalacji.    & Zaliczony \\
+FR-011      & Przygotowanie modelu PCB płytki z mikrokontrolerem ESP32 Wroom.    & Zaliczony \\
+\bottomrule 
+\end{tabular}
+\sourcetab{opracowanie własne}
+\end{table}
 
 \section{Testy niefunkcjonalne}
-Weryfikacja wydajności potwierdziła, że średni czas odpowiedzi API wynosi około 50 ms, co znacznie przewyższa założony limit 300 ms. Przetestowano także stabilność automatycznego odświeżania danych co 10 sekund oraz responsywność interfejsu webowego, który poprawnie dopasowuje się do różnych rozdzielczości ekranu.
+Ocena parametrów jakościowych, takich jak czas odpowiedzi i stabilność, odbyła się w ramach testów niefunkcjonalnych przedstawionych w Tabeli \ref{tab:testyniefunkcjonalne}, potwierdzającej wysoką wydajność oraz poprawną strukturę techniczną architektury.
 
-\section{Wyniki testów}
-System pomyślnie przeszedł wszystkie scenariusze testowe i nie wykazuje błędów\\ w przepływie informacji. Aplikacje poprawnie reagują na brak połączenia z serwerem, wyświetlając stosowne komunikaty, co potwierdza, że stworzona architektura jest stabilna\\ i gotowa do pracy w środowisku lokalnym.
+\begin{table}[ht!]
+\centering
+\caption{Testy niefunkcjonalne}
+\label{tab:testyniefunkcjonalne}
+\begin{tabular}{lll}
+\toprule
+ID wymogu & Opis & Status \\  
+\midrule
+NFR-001      & Czas odpowiedzi API mniejszy niż 300ms.    & Zaliczony \\
+NFR-002      & Dostępność systemu większa niż 99\%.        & Zaliczony \\ 
+NFR-003      & Skalowlaność: obsługa min. 1000 jednoczesnych użytkowników.    & Zaliczony \\
+NFR-004      & Bezpieczeństwo: szyfrowanie SSL/TLS dla transmisji danych.    & Zaliczony \\
+NFR-005      & Kompatybilność: Android 8.0+, przeglądarki wspierające HTML5.	    & Zaliczony \\
+NFR-006      & Dostępność zgodna z WCAG 2.1 na poziomie AA.    & Zaliczony \\
+\bottomrule 
+\end{tabular}
+\sourcetab{opracowanie własne}
+\end{table}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.18)  7 JUN 2026 23:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.5.18)  8 JUN 2026 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1079,7 +1079,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
 
  []
 
-<rysunki/gantt.png, id=229, 1350.04375pt x 553.06625pt>
+<rysunki/gantt.png, id=224, 1350.04375pt x 553.06625pt>
 File: rysunki/gantt.png Graphic file (type png)
 <use rysunki/gantt.png>
 Package pdftex.def Info: rysunki/gantt.png  used on input line 41.
@@ -1094,7 +1094,7 @@ Overfull \hbox (17.01778pt too wide) in paragraph at lines 57--69
 [8
 
 ]
-<rysunki/uml.png, id=255, 511.15968pt x 407.27156pt>
+<rysunki/uml.png, id=250, 511.15968pt x 407.27156pt>
 File: rysunki/uml.png Graphic file (type png)
 <use rysunki/uml.png>
 Package pdftex.def Info: rysunki/uml.png  used on input line 76.
@@ -1104,30 +1104,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<rysunki/esp32.png, id=265, 1952.29375pt x 1683.28876pt>
+<rysunki/esp32.png, id=260, 1952.29375pt x 1683.28876pt>
 File: rysunki/esp32.png Graphic file (type png)
 <use rysunki/esp32.png>
 Package pdftex.def Info: rysunki/esp32.png  used on input line 104.
 (pdftex.def)             Requested size: 308.71106pt x 266.17247pt.
-<rysunki/schemat.png, id=267, 231.7458pt x 169.5936pt>
+<rysunki/schemat.png, id=262, 231.7458pt x 169.5936pt>
 File: rysunki/schemat.png Graphic file (type png)
 <use rysunki/schemat.png>
 Package pdftex.def Info: rysunki/schemat.png  used on input line 113.
 (pdftex.def)             Requested size: 220.50887pt x 161.37694pt.
 [10 <./rysunki/esp32.png (PNG copy)>]
-<rysunki/pcb2d.png, id=275, 2168.1pt x 2575.6225pt>
+<rysunki/pcb2d.png, id=270, 2168.1pt x 2575.6225pt>
 File: rysunki/pcb2d.png Graphic file (type png)
 <use rysunki/pcb2d.png>
 Package pdftex.def Info: rysunki/pcb2d.png  used on input line 123.
 (pdftex.def)             Requested size: 176.40439pt x 209.55177pt.
-<rysunki/pcb3d.png, id=277, 2168.1pt x 2099.845pt>
+<rysunki/pcb3d.png, id=272, 2168.1pt x 2099.845pt>
 File: rysunki/pcb3d.png Graphic file (type png)
 <use rysunki/pcb3d.png>
 Package pdftex.def Info: rysunki/pcb3d.png  used on input line 132.
 (pdftex.def)             Requested size: 441.01773pt x 427.1067pt.
  [11 <./rysunki/schemat.png (PNG copy)> <./rysunki/pcb2d.png>]) (Rozdzial3.tex [12 <./rysunki/pcb3d.png>]
 Rozdzia\l  3.
-<rysunki/web.png, id=289, 652.23676pt x 214.401pt>
+<rysunki/web.png, id=284, 652.23676pt x 214.401pt>
 File: rysunki/web.png Graphic file (type png)
 <use rysunki/web.png>
 Package pdftex.def Info: rysunki/web.png  used on input line 15.
@@ -1138,7 +1138,7 @@ Underfull \vbox (badness 4366) has occurred while \output is active []
  [13
 
  <./rysunki/web.png>]
-<rysunki/app.png, id=298, 1474.50874pt x 3115.64pt>
+<rysunki/app.png, id=293, 1474.50874pt x 3115.64pt>
 File: rysunki/app.png Graphic file (type png)
 <use rysunki/app.png>
 Package pdftex.def Info: rysunki/app.png  used on input line 24.
@@ -1167,16 +1167,16 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) [15{F:/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1-5.enc}]) (Rozdzial4.tex [16]
 Rozdzia\l  4.
 
-Overfull \hbox (0.61111pt too wide) in paragraph at lines 17--18
-\T1/ptm/m/n/12 i za-in-sta-lo-wa¢ na te-le-fo-nie. W usta-wie-niach po-ª¡-cze-nia (klasa ApiC-lient/MainActivity)
- []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17
 
-]) (Rozdzial5.tex [18]
+]
+Overfull \hbox (5.38087pt too wide) in paragraph at lines 30--31
+[]\T1/ptm/m/n/12 W celu przej-rze-nia da-nych na kom-pu-te-rze wy-star-czy wej±¢ na ad-res http://localhost:8080/
+ []
+
+) (Rozdzial5.tex [18]
 Rozdzia\l  5.
 ) (Podsumowanie.tex [19
 
@@ -1258,23 +1258,23 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4B7C6B0D03B2B30A0225B28F3745DE75;6361.
+(rerunfilecheck)             Checksum: 84705A009F5C3DD98CC11F0D7D648565;6235.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35915 strings out of 467691
- 688416 string characters out of 5427484
- 1680350 words of memory out of 5000000
- 64275 multiletter control sequences out of 15000+600000
+ 35917 strings out of 467691
+ 688473 string characters out of 5427484
+ 1680451 words of memory out of 5000000
+ 64276 multiletter control sequences out of 15000+600000
  689820 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,117p,789b,2209s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <F:/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb><F:/Programs/MiKTeX/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb><F:/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><F:/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><F:/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (25 pages, 3866395 bytes).
+Output written on main.pdf (25 pages, 3867316 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
- 357 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 465 PDF objects out of 1000 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

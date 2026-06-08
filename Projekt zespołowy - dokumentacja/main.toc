@@ -31,9 +31,8 @@
 \contentsline {chapter}{\numberline {5}Testy i weryfikacja}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Testy funkcjonalne}{19}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Testy niefunkcjonalne}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Wyniki testów}{19}{section.5.3}%
-\contentsline {chapter}{Podsumowanie}{20}{chapter*.14}%
-\contentsline {chapter}{Netografia}{21}{chapter*.17}%
-\contentsline {chapter}{Spis rysunk\'ow}{22}{section*.18}%
-\contentsline {chapter}{Spis tabel}{23}{section*.19}%
-\contentsline {chapter}{Spis listingów}{25}{chapter*.20}%
+\contentsline {chapter}{Podsumowanie}{20}{chapter*.16}%
+\contentsline {chapter}{Netografia}{21}{chapter*.19}%
+\contentsline {chapter}{Spis rysunk\'ow}{22}{section*.20}%
+\contentsline {chapter}{Spis tabel}{23}{section*.21}%
+\contentsline {chapter}{Spis listingów}{25}{chapter*.22}%
