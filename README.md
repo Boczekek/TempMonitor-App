@@ -189,30 +189,6 @@ Interfejs umożliwia:
 
 ---
 
-# REST API
-
-## Wysłanie danych z ESP32
-
-### POST `/api/pomiary/arduino`
-
-Przykładowe dane:
-
-```json
-{
-  "temperatura": 24.5
-}
-```
-
----
-
-## Pobranie pomiarów
-
-### GET `/api/pomiary`
-
-Zwraca listę wszystkich pomiarów.
-
----
-
 # Funkcjonalności
 
 ## Zrealizowane
