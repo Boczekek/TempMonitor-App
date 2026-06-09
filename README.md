@@ -78,24 +78,8 @@ Aby aplikacja działała poprawnie, należy skonfigurować **adres IP serwera** 
 | **Architektura**    | Modułowa (MVP-like)                 |
 
 ---
-## 👥 **Zespół**
-| **Imię i nazwisko** | **Rola**                          |
-|---------------------|-----------------------------------|
-| Franciszek Dębski   | Programista IoT i PCB             |
-| Patryk Wilk         | Główny programista (Backend/Web) |
-| Krystian Zając      | Programista mobilny, Menadżer    |
-
----
 ## 📜 **Licencja**
 Projekt udostępniany na licencji **MIT**. Szczegóły w pliku `LICENSE` (opcjonalnie).
-
----
-## 📸 **Zrzuty ekranu**
-| **Ekran główny** | **Ustawienia** |
-|------------------|----------------|
-| ![Main Screen](screenshots/main.png) | ![Settings Screen](screenshots/settings.png) |
-
-> *Zrzuty ekranu dołącz do folderu `screenshots` w repozytorium.*
 
 ---
 ## 💡 **Uwagi**
