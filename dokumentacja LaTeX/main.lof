@@ -1,14 +1,11 @@
 \babel@toc {polish}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Wykres Gantta}}{7}{figure.caption.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2}{\ignorespaces Diagram UML architektury systemu}}{9}{figure.caption.7}%
-\contentsline {figure}{\numberline {3}{\ignorespaces ESP32 Wroom z czujnikiem DHT11}}{10}{figure.caption.8}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Schemat połączeń ESP32 z czujnikiem DHT11}}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Schemat płytki PCB}}{11}{figure.caption.10}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Wizualizacja przestrzenna płytki PCB}}{12}{figure.caption.11}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7}{\ignorespaces Interfejs webowy}}{13}{figure.caption.12}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Interfejs mobilny}}{14}{figure.caption.13}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Diagram Klas (Struktura aplikacji)}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagram Sekwencji (Przepływ danych)}}{8}{figure.caption.6}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Ekran główny aplikacji}}{9}{figure.caption.7}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Ekran główny aplikacji w ciemnym motywie}}{10}{figure.caption.8}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Ekran ustawień aplikacji}}{11}{figure.caption.9}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

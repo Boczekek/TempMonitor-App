@@ -1,38 +1,33 @@
 \babel@toc {polish}{}\relax 
-\contentsline {chapter}{Wstęp}{5}{chapter*.2}%
-\contentsline {chapter}{\numberline {1}Cel i zakres pracy}{6}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Cel projektu}{6}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Cele szczegółowe}{6}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Zakres pracy}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Podział zadań i harmonogram}{7}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Analiza wymagań i projekt rozwiązania}{8}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Wymagania funkcjonalne}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Wymagania niefunkcjonalne}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Wymagania jakościowe}{9}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Architektura rozwiązania}{9}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Stos technologiczny}{10}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Wykorzystany sprzęt}{10}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Schemat płytki PCB}{11}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Opis działania systemu}{13}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Środowisko i struktura projektu}{13}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Przepływ danych oraz integracja}{13}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Interfejs użytkownika}{13}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Fragmenty kodu źródłowego}{15}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Warstwa IoT (Mikrokontroler ESP32)}{15}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Warstwa serwerowa (Spring Boot)}{15}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Warstwa mobilna (Android)}{16}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}Instrukcja instalacji i użytkowania}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Wymagania sprzętowe i programowe}{17}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Instrukcja instalacji}{17}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Instrukcja użytkowania}{18}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Obsługa aplikacji mobilnej}{18}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Obsługa interfejsu webowego}{18}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Kontrola stanu połączenia}{18}{subsection.4.3.3}%
-\contentsline {chapter}{\numberline {5}Testy i weryfikacja}{19}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Testy funkcjonalne}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Testy niefunkcjonalne}{19}{section.5.2}%
-\contentsline {chapter}{Podsumowanie}{20}{chapter*.16}%
-\contentsline {chapter}{Netografia}{21}{chapter*.19}%
-\contentsline {chapter}{Spis rysunk\'ow}{22}{section*.20}%
-\contentsline {chapter}{Spis tabel}{23}{section*.21}%
-\contentsline {chapter}{Spis listingów}{25}{chapter*.22}%
+\contentsline {chapter}{Wstęp}{4}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Cel i zakres pracy}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Cel pracy}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Cele szczegółowe}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Zakres pracy}{5}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Analiza wymagań i projekt rozwiązania}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Wymagania funkcjonalne}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Wymagania niefunkcjonalne}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Architektura rozwiązania}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Opis działania aplikacji}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Struktura i logika aplikacji}{7}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Struktura klas}{7}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Przpływ danych}{8}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Interfejs użytkownika}{8}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Ekran główny}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Ekran ustawień}{11}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Pobieranie danych z REST API}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Automatyczne odświeżanie co 10 sekund}{12}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Logika wyświetlania aktualnej temperatury}{12}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Wyświetlanie dziennika}{12}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Implementacja i uruchomienie}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Wymagania sprzętowe}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Instrukcja instalacji}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Instrukcja użytkowania}{13}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Testy i weryfikacja}{14}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Testy funkcjonalne}{14}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Testy niefunkcjonalne}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Wyniki testów}{14}{section.5.3}%
+\contentsline {chapter}{Podsumowanie}{15}{chapter*.11}%
+\contentsline {chapter}{Spis rysunk\'ow}{16}{section*.14}%
+\contentsline {chapter}{Spis tabel}{17}{section*.15}%
+\contentsline {chapter}{Spis listingów}{19}{chapter*.16}%
